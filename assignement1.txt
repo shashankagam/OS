@@ -1,0 +1,416 @@
+Question 1 :
+root@LAPTOP-BAA3BE4P:~#date
+Mon 07 Sep 2020 09:31:28 AM PDT
+root@LAPTOP-BAA3BE4P:~#cal
+   September 2020     
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30           
+                      
+root@LAPTOP-BAA3BE4P:~#bc
+bc 1.07.1
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006, 2008, 2012-2017 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+quit
+
+root@LAPTOP-BAA3BE4P:~#echo robince
+robince
+
+root@LAPTOP-BAA3BE4P:~#who
+root :0           2020-09-07 09:26 (:0)
+
+root@LAPTOP-BAA3BE4P:~#whoami
+root
+
+root@LAPTOP-BAA3BE4P:~#logname
+root
+
+root@LAPTOP-BAA3BE4P:~#uname
+Linux
+root@LAPTOP-BAA3BE4P:~#seq 1 2 10
+1
+3
+5
+7
+9
+
+root@LAPTOP-BAA3BE4P:~#clear
+
+-----------------------------------------------------------------------------------------------
+
+Question 2 :
+root@LAPTOP-BAA3BE4P:~#mkdir a b c
+root@LAPTOP-BAA3BE4P:~#touch a/a.txt b/b.txt c/c.txt
+root@LAPTOP-BAA3BE4P:~#cp c a
+root@LAPTOP-BAA3BE4P:~#cp -r c a
+
+root@LAPTOP-BAA3BE4P:~#mv b c
+
+root@LAPTOP-BAA3BE4P:~#alias robince='ls -lh'
+root@LAPTOP-BAA3BE4P:~#robince
+total 44K
+drwxrwxr-x 3 root root 4.0K Sep  7 09:48 a
+-rw-rw-r-- 1 root root 1.1K Sep  7 09:48 Assignment1
+drwxrwxr-x 3 root root 4.0K Sep  7 09:48 c
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Desktop
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Documents
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Downloads
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Music
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Pictures
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Public
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Templates
+drwxr-xr-x 2 root root 4.0K Sep  7 08:52 Videos
+
+root@LAPTOP-BAA3BE4P:~#mv a cdac
+
+----------------------------------------------------------------------------------------------
+Question 3 :
+root@LAPTOP-BAA3BE4P:~#cat file1.txt > file2.txt
+root@LAPTOP-BAA3BE4P:~#cat file2.txt 
+This a new File
+Writing and copying the contents of file to another file using cat command.
+root@LAPTOP-BAA3BE4P:~#cat file1.txt > file3.txt
+root@LAPTOP-BAA3BE4P:~#cat file1.txt > file4.txt
+root@LAPTOP-BAA3BE4P:~#cat file1.txt > file5.txt
+root@LAPTOP-BAA3BE4P:~#cat file?.txt
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+root@LAPTOP-BAA3BE4P:~#cat file?.txt | grep 's'
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+This a new File
+Writing and copying the contents of file to another file using cat command.
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#cat > file.txt
+root@LAPTOP-BAA3BE4P:~#nano file.txt
+root@LAPTOP-BAA3BE4P:~#cat file.txt
+Hi I'm editing this file using nano editor.
+This is Fun!
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#touch file1.txt file2.txt file3.txt file4.txt file5.txt
+
+root@LAPTOP-BAA3BE4P:~#rm -rf cdac c
+root@LAPTOP-BAA3BE4P:~#ls
+
+------------------------------------------------------------------------------------------
+
+Question 3 :
+root@LAPTOP-BAA3BE4P:~#vi file1.txt
+
+root@LAPTOP-BAA3BE4P:~#cat file1.txt 
+HI IM EDITING THIS FILE IN VI AND IT IS NOT FUN
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#cat -n file1.txt 
+     1	HI IM EDITING THIS FILE IN VI AND IT IS NOT FUN
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#cat file1.txt 
+HI IM EDITING THIS FILE IN VI AND IT IS NOT FUN
+Hello this is another line
+and a new line
+another line again
+root@LAPTOP-BAA3BE4P:~#tac file1.txt 
+another line again
+and a new line
+Hello this is another line
+HI IM EDITING THIS FILE IN VI AND IT IS NOT FUN
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#cat file1.txt 
+This a new File
+Writing and copying the contents of file to another file using cat command.
+root@LAPTOP-BAA3BE4P:~#cat file1.txt > file2.txt
+root@LAPTOP-BAA3BE4P:~#cat file1.txt file2.txt > file3.txt
+root@LAPTOP-BAA3BE4P:~#cat file3.txt
+This a new File
+Writing and copying the contents of file to another file using cat command.This a new File
+Writing and copying the contents of file to another file using cat command.
+
+------------------------------------------------------------------------------------------
+
+Question 5 :
+
+root@LAPTOP-BAA3BE4P:~#paste file1.txt file2.txt | pr -T -e10
+One       Eight
+Two       Eleven
+Three     Five
+Four      Four
+Five      Nine
+Six       One
+Seven     Seven
+Eight     Six
+Nine      Ten
+Ten       Thirteen
+Eleven    Three
+Twelve    Twelve
+Thirteen  Two
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#mkdir -p dir1/newdir dir2
+root@LAPTOP-BAA3BE4P:~#
+root@LAPTOP-BAA3BE4P:~#touch dir1/newfile dir1/newdir/newfile2
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#cat > file.txt 
+a  
+c
+e
+f
+b
+d
+g
+m
+i
+h
+root@LAPTOP-BAA3BE4P:~#sort file.txt 
+a
+b
+c
+d
+e
+f
+g
+h
+i
+m
+root@LAPTOP-BAA3BE4P:~#sort -r file.txt 
+m
+i
+h
+g
+f
+e
+d
+c
+b
+a
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#touch .a.txt
+root@LAPTOP-BAA3BE4P:~#ls
+Assignment1  dir1  Documents  file.txt  Pictures  Templates
+Desktop      dir2  Downloads  Music     Public    Videos
+root@LAPTOP-BAA3BE4P:~#ls -a
+.              .bash_logout  dir1       .gnupg    Pictures                   Templates
+..             .bashrc       dir2       .lesshst  .profile                   Videos
+Assignment1    .cache        Documents  .local    Public
+.a.txt         .config       Downloads  .mozilla  .ssh
+.bash_history  Desktop       file.txt   Music     .sudo_as_admin_successful
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#touch -d "Sun, 19 May 1996" newfile.txt
+root@LAPTOP-BAA3BE4P:~#ls -l newfile.txt 
+-rw-rw-r-- 1 root root 0 May 19  1996 newfile.txt
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#ls -r
+Videos     Public    newfile.txt  file.txt   Documents  dir1     Assignment1
+Templates  Pictures  Music        Downloads  dir2       Desktop
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#ls -l
+total 52
+-rw-rw-r-- 1 root root 5091 Sep  7 11:15 Assignment1
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Desktop
+drwxrwxr-x 3 root root 4096 Sep  7 11:15 dir1
+drwxrwxr-x 2 root root 4096 Sep  7 11:13 dir2
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Documents
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Downloads
+-rw-rw-r-- 1 root root   20 Sep  7 11:20 file.txt
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Music
+-rw-rw-r-- 1 root root    0 May 19  1996 newfile.txt
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Pictures
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Public
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Templates
+drwxr-xr-x 2 root root 4096 Sep  7 08:52 Videos
+root@LAPTOP-BAA3BE4P:~#
+
+root@LAPTOP-BAA3BE4P:~#ls -ld
+drwxr-xr-x 18 root root 4096 Sep  7 11:29 .
+
+
+
+=============================================================================================
+=============================================================================================
+
+Question 1 :
+root@LAPTOP-BAA3BE4P:~#mkdir robince
+root@LAPTOP-BAA3BE4P:~#touch robince/a.txt robince/b.txt robince/c.txt robince/d.txt
+root@LAPTOP-BAA3BE4P:~#cd robince
+root@ubuntu:~/robince$ chmod 600 a.txt b.txt 
+root@ubuntu:~/robince$ chmod 200 c.txt 
+root@ubuntu:~/robince$ cat > d.txt
+#/bin/sh
+ls -lh
+root@ubuntu:~/robince$ chmod 100 d.txt
+root@ubuntu:~/robince$ ls -l
+total 4
+-rw------- 1 root root  0 Sep  8 02:56 a.txt
+-rw------- 1 root root  0 Sep  8 02:56 b.txt
+--w------- 1 root root  0 Sep  8 02:56 c.txt
+---x------ 1 root root 16 Sep  8 02:59 d.txt
+root@ubuntu:~/robince$ 
+
+Question 2 :
+root@LAPTOP-BAA3BE4P:~#chmod 111 newdir/
+root@LAPTOP-BAA3BE4P:~#ls -l
+total 44
+d--x--x--x 2 root root 4096 Sep  8 02:36 newdir
+
+
+Question 3:
+root@LAPTOP-BAA3BE4P:~#chmod 444 newdir/
+root@LAPTOP-BAA3BE4P:~#ls -l
+total 44
+dr--r--r-- 2 root root 4096 Sep  8 02:36 newdir
+
+Question 4:
+root@LAPTOP-BAA3BE4P:~#echo *
+Assignment1 Desktop Documents Downloads Music newdir Pictures Public Templates Videos
+
+Question 5:
+root@LAPTOP-BAA3BE4P:~#echo /etc/*
+/etc/acpi /etc/adduser.conf /etc/alsa /etc/alternatives /etc/anacrontab /etc/apg.conf /etc/apm /etc/apparmor /etc/apparmor.d /etc/apport /etc/appstream.conf /etc/apt /etc/avahi /etc/bash.bashrc /etc/bash_completion /etc/bash_completion.d /etc/bindresvport.blacklist /etc/binfmt.d /etc/bluetooth /etc/brlapi.key /etc/brltty /etc/brltty.conf /etc/ca-certificates /etc/ca-certificates.conf /etc/ca-certificates.conf.dpkg-old /etc/calendar /etc/chatscripts /etc/console-setup /etc/cracklib /etc/cron.d /etc/cron.daily /etc/cron.hourly /etc/cron.monthly /etc/crontab /etc/cron.weekly /etc/cups /etc/cupshelpers /etc/dbus-1 /etc/dconf /etc/debconf.conf /etc/debian_version /etc/default /etc/deluser.conf /etc/depmod.d /etc/dhcp /etc/dictionaries-common /etc/dpkg /etc/e2scrub.conf /etc/emacs /etc/environment /etc/environment.d /etc/ethertypes /etc/firefox /etc/fonts /etc/fprintd.conf /etc/fstab /etc/fuse.conf /etc/fwupd /etc/gai.conf /etc/gamemode.ini /etc/gdb /etc/gdm3 /etc/geoclue /etc/ghostscript /etc/glvnd /etc/gnome /etc/groff /etc/group /etc/group- /etc/grub.d /etc/gshadow /etc/gshadow- /etc/gss /etc/gtk-2.0 /etc/gtk-3.0 /etc/hdparm.conf /etc/host.conf /etc/hostid /etc/hostname /etc/hosts /etc/hosts.allow /etc/hosts.deny /etc/hp /etc/ifplugd /etc/init /etc/init.d /etc/initramfs-tools /etc/inputrc /etc/insserv.conf.d /etc/iproute2 /etc/issue /etc/issue.net /etc/kernel /etc/kernel-img.conf /etc/kerneloops.conf /etc/ldap /etc/ld.so.cache /etc/ld.so.conf /etc/ld.so.conf.d /etc/legal /etc/libao.conf /etc/libaudit.conf /etc/libblockdev /etc/libnl-3 /etc/libpaper.d /etc/libreoffice /etc/locale.alias /etc/locale.gen /etc/localtime /etc/logcheck /etc/login.defs /etc/logrotate.conf /etc/logrotate.d /etc/lsb-release /etc/ltrace.conf /etc/machine-id /etc/magic /etc/magic.mime /etc/mailcap /etc/mailcap.order /etc/manpath.config /etc/mime.types /etc/mke2fs.conf /etc/modprobe.d /etc/modules /etc/modules-load.d /etc/mtab /etc/mtools.conf /etc/mysql /etc/nanorc /etc/netplan /etc/network /etc/networkd-dispatcher /etc/NetworkManager /etc/networks /etc/newt /etc/nsswitch.conf /etc/openvpn /etc/opt /etc/os-release /etc/PackageKit /etc/pam.conf /etc/pam.d /etc/papersize /etc/passwd /etc/passwd- /etc/pcmcia /etc/perl /etc/pki /etc/pm /etc/pnm2ppa.conf /etc/polkit-1 /etc/popularity-contest.conf /etc/ppp /etc/profile /etc/profile.d /etc/protocols /etc/pulse /etc/python3 /etc/python3.8 /etc/rc0.d /etc/rc1.d /etc/rc2.d /etc/rc3.d /etc/rc4.d /etc/rc5.d /etc/rc6.d /etc/rc.local /etc/rcS.d /etc/resolv.conf /etc/rmt /etc/rpc /etc/rsyslog.conf /etc/rsyslog.d /etc/rygel.conf /etc/sane.d /etc/security /etc/selinux /etc/sensors3.conf /etc/sensors.d /etc/services /etc/sgml /etc/shadow /etc/shadow- /etc/shells /etc/skel /etc/snmp /etc/speech-dispatcher /etc/ssh /etc/ssl /etc/subgid /etc/subgid- /etc/subuid /etc/subuid- /etc/sudoers /etc/sudoers.d /etc/sysctl.conf /etc/sysctl.d /etc/systemd /etc/terminfo /etc/thermald /etc/thunderbird /etc/timezone /etc/tmpfiles.d /etc/ubuntu-advantage /etc/ucf.conf /etc/udev /etc/udisks2 /etc/ufw /etc/update-manager /etc/update-motd.d /etc/update-notifier /etc/UPower /etc/usb_modeswitch.conf /etc/usb_modeswitch.d /etc/vim /etc/vmware-tools /etc/vtrgb /etc/vulkan /etc/wgetrc /etc/wpa_supplicant /etc/X11 /etc/xattr.conf /etc/xdg /etc/xml /etc/zsh_command_not_found
+root@LAPTOP-BAA3BE4P:~#
+
+Question 6 :
+root@LAPTOP-BAA3BE4P:~#echo /etc/*.conf
+/etc/adduser.conf /etc/apg.conf /etc/appstream.conf /etc/brltty.conf /etc/ca-certificates.conf /etc/debconf.conf /etc/deluser.conf /etc/e2scrub.conf /etc/fprintd.conf /etc/fuse.conf /etc/gai.conf /etc/hdparm.conf /etc/host.conf /etc/kernel-img.conf /etc/kerneloops.conf /etc/ld.so.conf /etc/libao.conf /etc/libaudit.conf /etc/logrotate.conf /etc/ltrace.conf /etc/mke2fs.conf /etc/mtools.conf /etc/nsswitch.conf /etc/pam.conf /etc/pnm2ppa.conf /etc/popularity-contest.conf /etc/resolv.conf /etc/rsyslog.conf /etc/rygel.conf /etc/sensors3.conf /etc/sysctl.conf /etc/ucf.conf /etc/usb_modeswitch.conf /etc/xattr.conf
+root@LAPTOP-BAA3BE4P:~#
+
+Question 7 :
+root@LAPTOP-BAA3BE4P:~#touch a.txt
+root@LAPTOP-BAA3BE4P:~#echo robince > a.txt
+root@LAPTOP-BAA3BE4P:~#cat a.txt
+robince
+root@LAPTOP-BAA3BE4P:~#
+
+
+==============================================================================================
+==============================================================================================
+
+Question 1 :
+root@LAPTOP-BAA3BE4P:~#mkdir -p a/b/c
+root@LAPTOP-BAA3BE4P:~#touch a/.a a/b/.b a/b/.c
+root@LAPTOP-BAA3BE4P:~#touch a/a a/b/b a/b/c/c
+root@LAPTOP-BAA3BE4P:~#cp -r a/b/c a
+root@LAPTOP-BAA3BE4P:~#cp a/a a/b
+
+Question 2 :
+root@LAPTOP-BAA3BE4P:~#chmod 400 a/b/c
+
+Question 3 :
+root@LAPTOP-BAA3BE4P:~#cp -r a/b/c .
+root@LAPTOP-BAA3BE4P:~#ls
+a  Assignment1  c  Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+root@LAPTOP-BAA3BE4P:~#
+
+Question 4 :
+root@ubuntu:~/a$ mkdir b/data
+
+Question 5 :
+root@ubuntu:~/a$ chmod 666 b
+
+
+Question 6 :
+root@ubuntu:~/a$ sudo mkdir b/data2
+
+Question 7 :
+root@ubuntu:~/a$ touch b/data.txt
+
+Question 8 :
+root@ubuntu:~/a$ mv b/c b/copied_dir
+
+Question 9 : 
+root@ubuntu:~/a$ chmod 111 b/copied_dir
+
+Question 10 :
+root@ubuntu:~/a$ ls b/copied_dir/
+ls: cannot open directory 'b/copied_dir/': Permission denied
+root@ubuntu:~/a$ 
+
+
+Question 11 :
+root@ubuntu:~/a$ mv b/copied_dir/ ..
+mv: cannot move 'b/copied_dir/' to '../copied_dir': Permission denied
+
+
+Question 12 :
+root@ubuntu:~/a$ mv b/data ..
+root@ubuntu:~/a$ ls ~
+a  Assignment1  c  data  Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+root@ubuntu:~/a$ 
+
+
+Question 13 :
+root@LAPTOP-BAA3BE4P:~#sudo chown root a
+root@LAPTOP-BAA3BE4P:~#ls -l
+
+Question 14 :
+root@LAPTOP-BAA3BE4P:~#sudo chmod 700 a
+
+Question 15 :
+root@LAPTOP-BAA3BE4P:~#sudo mkdir a/dir_sample
+
+Question 16 :
+root@ubuntu:~/a$ mkdir ../x
+
+Question 17 :
+root@LAPTOP-BAA3BE4P:~#mv x a
+
+Question 18 :
+root@LAPTOP-BAA3BE4P:~#mkdir movies
+
+Quesiton 19 :
+root@LAPTOP-BAA3BE4P:~#chgrp sudo movies
+
+Question 20 :
+root@LAPTOP-BAA3BE4P:~#sudo chgrp avahi movies
+
+
+Question 21 :
+root@LAPTOP-BAA3BE4P:~#sudo chown root movies
+root@LAPTOP-BAA3BE4P:~#sudo chmod 777 movies
+
+Question 22 :
+root@LAPTOP-BAA3BE4P:~#chmod 777 movies
+chmod: changing permissions of 'movies': Operation not permitted
+root@LAPTOP-BAA3BE4P:~#
+
+
+Question 23 :
+root@LAPTOP-BAA3BE4P:~#sudo chown root movies
+root@LAPTOP-BAA3BE4P:~#sudo chgrp root movies
+
+Question 24 :
+root@LAPTOP-BAA3BE4P:~#chmod 111 movies
+chmod: changing permissions of 'movies': Operation not permitted
+root@LAPTOP-BAA3BE4P:~#sudo chmod 771 movies
+root@LAPTOP-BAA3BE4P:~#
+
+
+Question 25 :
+root@LAPTOP-BAA3BE4P:~#rm -rf movies
+
+

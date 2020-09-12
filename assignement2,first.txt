@@ -1,0 +1,125 @@
+1)create dir
+
+#!/bin/bash
+
+for (( i=1; i<=10; i++ ))
+do
+	if [ -e a$i ]
+	then
+		echo 'ERROR -- File' a$i 'already Exist!'
+	else
+		mkdir a$i
+	fi
+done
+=======================================
+2) env var
+#!/bin/bash
+
+echo 'Home : ' $HOME
+echo 'Path : ' $PATH
+echo 'Shell : ' $SHELL
+echo 'History : ' $HISTORY
+echo 'Logname : ' $LOGNAME
+echo 'Term : ' $TERM
+=========================================
+3)file per with name
+#!/bin/bash
+
+ls -l |  awk '{print $1, $9}'
+=======================================
+4)menuscript
+
+#!/bin/bash
+
+while ( true )
+do
+	echo '1. Find length of String'
+	echo '2. Copy a string'
+	echo '3. Concat Strings'
+	echo '4. Compare two Strings'
+	echo '5. Reverse a string'
+	read  choice
+
+	case $choice in
+	1)
+		read -p 'Enter a String : '  str
+		echo 'Length of string' $str 'is :' ${#str}
+		;;
+	2)
+		read -p 'Enter a string : ' str
+		new=$str
+		echo 'New String : ' $new
+		;;
+	3)
+		read -p 'Enter String 1 : ' str1
+		read -p 'Enter String 2 : ' str2
+		newstr=$str1' '$str2
+		echo $newstr
+		;;
+	4)
+		read -p 'Enter String 1 : ' str1
+		read -p 'Enter String 2 : ' str2
+		if [ $str1 == $str2 ]
+		then
+			echo 'Strings are equal'
+		else
+			echo 'Strings are not equal'
+		fi
+		;;
+	5)
+		rev=""
+		read -p 'Enter a String : ' str
+		len=${#str}
+		for (( i=len; i>0; i-- ))
+		do
+			rev1=`expr $str | cut -c $i`
+			rev=$rev$rev1
+		done
+		echo $rev
+
+		;;
+	*)
+		exit
+	;;
+
+	esac
+done
+=====================================================================
+5)print file greater than
+
+#!/bin/bash
+
+
+
+for i in *
+do
+	if [ -e $i ]
+	then
+		file=`ls -l $i | awk '{print $5}'`
+		if (( $file > 5000 ))
+		then
+			ls -l $i
+		fi 
+	fi
+done
+==================================
+
+6)print file per
+#!/bin/bash
+
+ls -l | awk '{ print $1 }' 
+
+========================================
+7)rename dir
+#!/bin/bash
+
+for i in *
+do
+	if [ -d $i ]
+	then
+		mv $i 'newdir'$i
+		echo $i 'renamed to newdir'$i
+	fi
+done
+ls
+

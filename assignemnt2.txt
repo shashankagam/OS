@@ -1,0 +1,243 @@
+1)avg of 3 num
+#!/bin/bash
+
+echo 'Enter num1 : '
+read num1
+echo 'Enter num2 : '
+read num2
+echo 'Enter num3 : '
+read num3
+
+(( avg = (( $num1+$num2+$num3 ))/3 ))
+echo 'Average : '$avg
+=======================================
+
+2)big of 3 num
+
+#!/bin/bash
+
+echo 'Enter num1 : '
+read num1
+echo 'Enter num2 : '
+read num2
+echo 'Enter num3 : '
+read num3
+
+if (( num1 > num2 && num1 > num3 ))
+then
+	echo $num1
+elif (( num2 > num1 && num2 > num3 ))
+then
+	echo $num2
+else
+	echo $num3
+fi
+
+==========================================================
+3)cal current month
+
+#!/bin/bash
+
+mon=$(date | awk '{print $3}')
+year=$(date | awk '{print $4}')
+
+let "prev=year-1" "next=year+1"
+
+cal $mon $prev
+cal $mon $year
+cal $mon $next
+==========================================================
+4) calculate the leap year
+
+#!/bin/bash
+echo 'Enter a year : '
+read year
+if (( $year%4 == 0 && $year%100 != 0 || $year%400 == 0))
+then
+	echo 'Leap Year'
+else
+	echo 'Not a Leap Year'
+fi
+========================================================
+
+5)days in a week
+
+echo 'Enter the no of Day : '
+read day
+
+if [ $day == 1 ]
+then
+	echo 'Sunday'
+elif [ $day == 2 ]
+then
+	echo 'Monday'
+elif [ $day == 3 ]
+then
+	echo 'Tuesday'
+elif [ $day == 4 ]
+then
+	echo 'Wednesday'
+elif [ $day == 5 ]
+then
+	echo 'Thrusday'
+elif [ $day == 6 ]
+then
+	echo 'Friday'
+elif [ $day == 7 ]
+then
+	echo 'Saturday'
+else
+	echo 'Invalid Entry'
+fi
+================================================
+6)days of a week case
+
+#!/bin/bash
+
+while ( true )
+do
+	echo 'Enter the Day num : '
+	read day
+	case $day in
+	1)
+		echo 'Sunday' ;;
+	2)
+		echo 'Monday' ;;
+	3)
+		echo 'Tuesday' ;;
+	4)
+		echo 'Wednesday' ;;
+	5)
+		echo 'Thursday' ;;
+	6)
+		echo 'Friday' ;;
+	7)
+		echo 'Saturday' ;;
+	*)
+		echo 'Invalid Entry' 
+		exit ;;
+	esac
+done
+==============================================
+7)odd or even
+
+#!/bin/bash
+
+echo 'Enter a number : '
+read num
+
+if (( num%2 == 0 ))
+then 
+	echo $num 'is Even.'
+else
+	echo $num 'is Odd.'
+fi
+
+=============================
+8)#!/bin/bash
+
+echo 'Enter the range till you want to calculate the Fibonaccci Series : '
+read range
+i=1
+prev=0
+newprev=0
+while (( $i+$prev < $range ))
+do
+	echo $(expr $prev + $i)
+	newprev=$prev
+	prev=$i
+	i=$(expr $newprev + $i)
+done
+============================================
+
+9)pass check
+
+#!/bin/bash
+
+echo 'Enter a password : '
+read  pass
+len=${#pass}
+if [ $len -ge 8 ]
+then
+	echo $pass | grep -q [0-9]
+	if [ $? -eq 0 ]
+	then
+		echo $pass | grep -q [A-Z]
+		if [ $? -eq 0 ]
+		then
+			echo $pass | grep -q [a-z]
+			if [ $? -eq 0 ]
+			then
+				echo 'Strong Password'
+			else
+				echo 'Weak Password'
+			fi
+		else
+			echo 'Weak Password'
+		fi
+	else
+		echo 'Weak Password'
+	fi
+else
+	echo 'Weak Password'
+fi
+=============================================
+10)prod of
+
+#!/bin/bash
+
+echo 'Enter num1 : '
+read num1
+echo 'Enter num2 : '
+read num2
+
+let "prodlet=num1*num2"
+
+prodExp=$(expr $num1 \* $num2)
+
+echo 'Let : '
+echo $prodlet 
+echo 'Expr : '
+echo $prodExp
+echo 'BC : '
+echo $num1 \* $num2 | bc
+======================================
+11)
+rev of num
+
+#!/bin/bash
+
+echo 'Enter a number : '
+read num
+n=$num
+sum=0
+rem=0
+while (( $n > 0 ))
+do
+	rem=`expr $n % 10`
+	sum=`expr $sum \* 10`
+	sum=`expr $sum + $rem`
+	n=`expr $n / 10`
+done
+echo 'Reverse : ' $sum
+========================================
+12)rev of string
+
+#!/bin/bash
+
+echo 'Enter a string : '
+read str
+rev=""
+len=${#str}
+for (( i=$len; i>0; i-- ))
+do
+	temp=$(expr $str | cut -c $i)
+	rev=$rev$temp
+done
+
+echo $rev
+
+
+
+
+
